@@ -1,2 +1,66 @@
 @import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
 
+/* 🎨 Sistema de diseño: variables de spacing, breakpoints, colores, etc. */
+@theme {
+  /* Variables de padding responsivo */
+  --spacing-psm: 25px;   /* sm: >= 640px */
+  --spacing-pmd: 50px;   /* md: >= 768px */
+  --spacing-pxl: 150px;  /* xl: >= 1024px */
+  --spacing-p2xl: 200px; /* 2xl: >= 1280px */
+  --spacing-p3xl: 300px; /* 3xl: >= 1920px */
+
+  /* Breakpoint adicional personalizado (opcional) */
+  --breakpoint-3xl: 1920px;
+
+  /* Tipografía */
+  --font-sans: 'Roboto', sans-serif;
+
+  /* Colores (ejemplo, puedes expandirlo) */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #111827;
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
+}
+
+/* 🌄 Fondo con gradiente para secciones o body */
+.gradient_background {
+  background: linear-gradient(129deg, rgba(255, 255, 255, 1) 0%, rgba(23, 22, 22, 1) 42%);
+}
+
+/* 🌐 Fuente global */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+/* 🧩 Clase utilitaria global para padding lateral responsivo */
+@layer utilities {
+  .padding-general {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 640px) {
+      padding-left: var(--spacing-psm);
+      padding-right: var(--spacing-psm);
+    }
+    @media (min-width: 768px) {
+      padding-left: var(--spacing-pmd);
+      padding-right: var(--spacing-pmd);
+    }
+    @media (min-width: 1024px) {
+      padding-left: var(--spacing-pxl);
+      padding-right: var(--spacing-pxl);
+    }
+    @media (min-width: 1280px) {
+      padding-left: var(--spacing-p2xl);
+      padding-right: var(--spacing-p2xl);
+    }
+    @media (min-width: 1920px) {
+      padding-left: var(--spacing-p3xl);
+      padding-right: var(--spacing-p3xl);
+    }
+  }
+}

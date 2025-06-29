@@ -1,12 +1,22 @@
 import './App.css'
+import Hero from './Components/Hero'
+import Nav from './Components/Nav'
+import Pantalla from './Components/Pantalla'
+
 
 function App() {
   
 
   return (
     <>
-     
-      <h1 >HOLA</h1>
+   
+     <Nav/>
+     <Hero/>
+     <div className='bg-black h-4'>
+
+     </div>
+     < Pantalla/>
+    
       
      
     </>
